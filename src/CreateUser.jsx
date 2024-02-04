@@ -12,7 +12,7 @@ function CreateUser() {
   const submit = (e)=>{
     e.preventDefault()
          
-    axios.post("http://localhost:5500/createUser",{name,email,age})
+    axios.post("http://localhost:8000/createUser",{name,email,age})
     .then((result)=>{
         console.log(result)
         navigate('/')
