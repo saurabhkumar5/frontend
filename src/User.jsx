@@ -12,6 +12,10 @@ function User() {
                 .then((res)=>setUser(res.data))
                 .catch((err)=>console.log(err))
             },[]) 
+        const surajDelete = (kuchbhi)=>{
+                  axios.delete('http://localhost:8000/deleteUser/'+kuchbhi)
+                  .then(res => window.location.reload())
+        }
 
   return (
     <div className='d-flex vh-100 bg-secondary justify-content-center align-items-center'>
@@ -35,7 +39,7 @@ function User() {
                             <td>{user.age}</td>
                             {/* <button>update</button> */}
                             <Link to="/update" className='btn btn-success'>Edit</Link>
-                            <button>delete</button>
+                            <button className='btn btn-danger' onClick={(e)=>surajDelete(user._id)}>delete</button>
                          </tr>
                     })
                 }
@@ -47,3 +51,4 @@ function User() {
 }
 
 export default User
+
