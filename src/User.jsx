@@ -32,13 +32,13 @@ function User() {
             </thead>
             <tbody>
                 {
-                    users.map((user)=>{
+                    users.map(user=>{
                          return <tr>
                             <td>{user.name}</td>
                             <td>{user.email}</td>
                             <td>{user.age}</td>
                             {/* <button>update</button> */}
-                            <Link to="/update" className='btn btn-success'>Edit</Link>
+                            <Link to={`/update/${user._id}`} className='btn btn-success'>Update</Link>
                             <button className='btn btn-danger' onClick={(e)=>surajDelete(user._id)}>delete</button>
                          </tr>
                     })
